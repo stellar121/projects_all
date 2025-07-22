@@ -37,3 +37,4 @@
 ├── test/
 │   └── test.py                    # 主测试脚本
 ├── README.md                      # 项目说明文件（本文件）
+└── requirements.txt               # 依赖列表
