@@ -17,24 +17,43 @@
 ## 项目目录结构
 
 .
+
 ├── src/
+
 │ ├── embed_watermark.py # 水印嵌入函数
+
 │ ├── extract_watermark.py # 水印提取函数
+
 │ └── attacks.py # 攻击模拟函数
+
 ├── images/
+
 │ ├── lenna.png # 原始载体图像
+
 │ ├── watermark.png # 二值水印图像
+
 │ ├── wm_lenna.png # 嵌入水印后的图像
+
 │ ├── flip.png # 各类攻击后的图像
+
 │ ├── translate.png
+
 │ ├── crop.png
+
 │ ├── contrast.png
+
 │ ├── extracted_flip.png # 提取出的水印结果
+
 │ ├── extracted_translate.png
+
 │ ├── extracted_crop.png
+
 │ └── extracted_contrast.png
+
 ├── test/
+
 │ └── test.py
+
 └── README.md # 项目说明文件（本文件）
 
 
