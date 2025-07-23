@@ -13,3 +13,5 @@ project4：SM3 的软件实现与优化
 project5：SM2 的软件实现优化
 
 project6：Google Password Checkup验证
+
+各项目的详细说明请参见对应目录下的 README.md 文件。
