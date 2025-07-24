@@ -1,4 +1,14 @@
-# SM2 的软件实现优化
+from pathlib import Path
+
+# MathJax script to prepend
+mathjax_script = """<script type="text/javascript"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+"""
+
+# Original markdown content (from user input, already escaped \\)
+original_content = """# SM2 的软件实现优化
 
 ## 一、SM2 加解密过程（基于椭圆曲线）
 
@@ -63,3 +73,5 @@
 - 所有运算均在椭圆曲线定义的有限域 $\\mathbb{F}_p$ 和群阶 $n$ 上进行；
 - $Z_A$ 为用户身份标识、公钥等组合的哈希值，用于绑定签名身份；
 - $KDF$ 是密钥派生函数，通常使用 $SM3$ 实现；
+"""
+
