@@ -4,13 +4,13 @@
 
 ### 加密流程（发送方）：
 
-1. 生成随机数 $k \in [1, n - 1]$
+1. 生成随机数 $k \\in [1, n - 1]$
 2. 计算椭圆曲线点：$C_1 = kG$
 3. 计算共享密钥点：$S = kP_B = (x_2, y_2)$
-4. 使用 $KDF(x_2 \parallel y_2, k_{\text{len}})$ 生成密钥 $t$
-5. 计算：$C_2 = M \oplus t$（其中 $M$ 为明文）
-6. 计算哈希：$C_3 = \text{Hash}(x_2 \parallel M \parallel y_2)$
-7. 输出密文：$C = C_1 \parallel C_3 \parallel C_2$
+4. 使用 $KDF(x_2 \\parallel y_2, k_{\\text{len}})$ 生成密钥 $t$
+5. 计算：$C_2 = M \\oplus t$（其中 $M$ 为明文）
+6. 计算哈希：$C_3 = \\text{Hash}(x_2 \\parallel M \\parallel y_2)$
+7. 输出密文：$C = C_1 \\parallel C_3 \\parallel C_2$
 
 ---
 
@@ -18,10 +18,10 @@
 
 1. 从密文中解析出 $C_1$、$C_2$、$C_3$
 2. 验证 $C_1$ 是否为合法曲线点
-3. 计算共享点：$S = d_B \cdot C_1 = (x_2, y_2)$
-4. 使用 $KDF(x_2 \parallel y_2, k_{\text{len}})$ 得到密钥 $t$
-5. 恢复明文：$M = C_2 \oplus t$
-6. 验证哈希是否一致：$C_3 \stackrel{?}{=} \text{Hash}(x_2 \parallel M \parallel y_2)$
+3. 计算共享点：$S = d_B \\cdot C_1 = (x_2, y_2)$
+4. 使用 $KDF(x_2 \\parallel y_2, k_{\\text{len}})$ 得到密钥 $t$
+5. 恢复明文：$M = C_2 \\oplus t$
+6. 验证哈希是否一致：$C_3 \\stackrel{?}{=} \\text{Hash}(x_2 \\parallel M \\parallel y_2)$
 
 ---
 
@@ -29,18 +29,14 @@
 
 ### 签名流程：
 
-1. 生成随机数 $k \in [1, n - 1]$
+1. 生成随机数 $k \\in [1, n - 1]$
 2. 计算：$P_1 = kG = (x_1, y_1)$
-3. 计算消息摘要：$e = \text{Hash}(Z_A \parallel M)$，其中 $Z_A$ 为身份杂凑值
+3. 计算消息摘要：$e = \\text{Hash}(Z_A \\parallel M)$，其中 $Z_A$ 为身份杂凑值
 4. 计算：
-   $$
-   r = (e + x_1) \bmod n
-   $$
+   $r = (e + x_1) \\bmod n$
    若 $r = 0$ 或 $r + k = n$，则重签
 5. 计算：
-   $$
-   s = \left(1 + d_A\right)^{-1} \cdot \left(k - r \cdot d_A\right) \bmod n
-   $$
+   $s = \\left(1 + d_A\\right)^{-1} \\cdot \\left(k - r \\cdot d_A\\right) \\bmod n$
    若 $s = 0$，则重签
 6. 输出签名对 $(r, s)$
 
@@ -48,32 +44,22 @@
 
 ### 验证流程：
 
-1. 验证 $r, s \in [1, n - 1]$，否则拒绝
-2. 计算摘要：$e = \text{Hash}(Z_A \parallel M)$
+1. 验证 $r, s \\in [1, n - 1]$，否则拒绝
+2. 计算摘要：$e = \\text{Hash}(Z_A \\parallel M)$
 3. 计算：
-   $$
-   t = (r + s) \bmod n
-   $$
+   $t = (r + s) \\bmod n$
    若 $t = 0$，则拒绝
 4. 计算点：
-   $$
-   (x_1', y_1') = sG + tP_A
-   $$
+   $(x_1', y_1') = sG + tP_A$
 5. 计算：
-   $$
-   R = (e + x_1') \bmod n
-   $$
+   $R = (e + x_1') \\bmod n$
 6. 判断：
-   $$
-   R \stackrel{?}{=} r
-   $$
+   $R \\stackrel{?}{=} r$
 
 ---
 
 ## 三、补充说明
 
-- 所有运算均在椭圆曲线定义的有限域 $\mathbb{F}_p$ 和群阶 $n$ 上进行；
+- 所有运算均在椭圆曲线定义的有限域 $\\mathbb{F}_p$ 和群阶 $n$ 上进行；
 - $Z_A$ 为用户身份标识、公钥等组合的哈希值，用于绑定签名身份；
 - $KDF$ 是密钥派生函数，通常使用 $SM3$ 实现；
-
-
