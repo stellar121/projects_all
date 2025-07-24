@@ -1,14 +1,4 @@
-from pathlib import Path
-
-# MathJax script to prepend
-mathjax_script = """<script type="text/javascript"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-"""
-
-# Original markdown content (from user input, already escaped \\)
-original_content = """# SM2 的软件实现优化
+# SM2 的软件实现优化
 
 ## 一、SM2 加解密过程（基于椭圆曲线）
 
