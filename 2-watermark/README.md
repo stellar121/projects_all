@@ -22,7 +22,8 @@
 │   ├── extracted_contrast.png     # 提取结果：对比度
 ├── test/
 │   └── test.py                    # 主测试脚本
-├── README.md                      # 项目说明文件（本文件）
+├── project2.pdf                   # 报告文档
+├── README.md                      # 仓库结构说明
 └── requirements.txt               # 依赖列表
 
 ## 具体的算法原理、代码分析、实验结果与分析见报告文档————project2.pdf
