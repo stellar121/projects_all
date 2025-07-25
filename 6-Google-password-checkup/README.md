@@ -1,6 +1,8 @@
-# Google Password Checkup PSI 协议实现（基于 DDH 的私有交集和）
+# Google Password Checkup 验证
 
-## 项目结构
+## 项目目录结构
+
+```text
 .
 ├── src/
 │   ├── crypto_utils.py           # 哈希、群运算、Paillier 同态加密等函数
@@ -12,6 +14,8 @@
 ├── project6.pdf                  # 项目说明文件（本文件）
 ├── README.md                     # 项目说明文件（本文件）
 └── requirements.txt              # 依赖列表
+```
 
+## 具体的算法原理、代码分析、实验结果与分析见报告文档————project6.pdf
 
 
