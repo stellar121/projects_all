@@ -11,8 +11,8 @@
 │   ├── protocol.py               # 封装完整三轮协议执行流程
 ├── test/
 │   └── test_protocol.py          # 示例测试入口
-├── project6.pdf                  # 项目说明文件（本文件）
-├── README.md                     # 项目说明文件（本文件）
+├── project6.pdf                  # 报告文档
+├── README.md                     # 仓库结构说明
 └── requirements.txt              # 依赖列表
 ```
 
