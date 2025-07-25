@@ -14,4 +14,4 @@ project5：SM2 的软件实现优化
 
 project6：Google Password Checkup验证
 
-各项目的详细说明请参见对应目录下的 README.md 文件。
+各项目的报告文档参见对应目录下的project.pdf文件，目录说明参见对应目录下的 README.md 文件。
