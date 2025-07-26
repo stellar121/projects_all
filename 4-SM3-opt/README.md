@@ -17,8 +17,8 @@
 │   ├── test_sm3_attack.cpp  # 长度扩展攻击文件
 │   ├── test_sm3_merkle.cpp  # 根据RFC6962构建Merkle树
 │   └── benchmark_sm3.cpp    # 用于比较不同实现的性能
-├── project2.pdf             # 项目分析报告
+├── project4.pdf             # 项目分析报告
 └── README.md                # 仓库说明文档
 ```
 
-## 具体的算法原理、代码分析、实验结果与分析见报告文档————project2.pdf
+## 具体的算法原理、代码分析、实验结果与分析见报告文档————project4.pdf
