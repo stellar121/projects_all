@@ -127,7 +127,7 @@ public:
     }
 
     ~MerkleTree() {
-        // 递归释放节点内存（简化实现）
+        // 递归释放节点内存
         std::function<void(MerkleNode*)> delete_node = [&](MerkleNode* node) {
             if (!node) return;
             delete_node(node->left);
